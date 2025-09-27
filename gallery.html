@@ -148,15 +148,28 @@
   </div>
 
   <script>
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox").style.display = "flex";
-    }
+  let rotation = 0; // track rotation
 
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
+  function openLightbox(src) {
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    img.style.transform = "rotate(0deg)"; // reset rotation
+    rotation = 0;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  // Add rotation on image click
+  const lightboxImage = document.getElementById("lightbox-img");
+  lightboxImage.addEventListener("click", function(e) {
+    e.stopPropagation(); // prevent closing lightbox
+    rotation += 90;      // rotate 90° each click
+    lightboxImage.style.transform = `rotate(${rotation}deg)`;
+  });
+</script>
 
 </body>
 </html>
