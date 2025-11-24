@@ -66,6 +66,17 @@
     .lightbox:active {
       display: none;
     }
+    /* Extra: Zoomable image inside lightbox */
+.lightbox img {
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+}
+
+/* When zoomed */
+.lightbox img.zoomed {
+  cursor: zoom-out;
+  transform: scale(2); /* Change 2 → 3 or 4 if you want more zoom */
+}
   </style>
 </head>
 <body>
