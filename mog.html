@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neon Buttons</title>
+
+<style>
+  body {
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 40px;
+  }
+
+  /* Base button */
+  .neon-btn {
+    padding: 20px 60px;
+    font-size: 24px;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  /* 🔵 Blue Neon */
+  .blue {
+    color: #00f0ff;
+    border: 3px solid #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    box-shadow: 0 0 10px #00f0ff, inset 0 0 10px #00f0ff;
+  }
+
+  .blue:hover {
+    background: #00f0ff;
+    color: #000;
+    box-shadow:
+      0 0 20px #00f0ff,
+      0 0 40px #00f0ff,
+      0 0 80px #00f0ff;
+  }
+
+  /* 🔴 Red Neon */
+  .red {
+    color: #ff2e2e;
+    border: 3px solid #ff2e2e;
+    text-shadow: 0 0 10px #ff2e2e, 0 0 20px #ff2e2e;
+    box-shadow: 0 0 10px #ff2e2e, inset 0 0 10px #ff2e2e;
+  }
+
+  .red:hover {
+    background: #ff2e2e;
+    color: #000;
+    box-shadow:
+      0 0 20px #ff2e2e,
+      0 0 40px #ff2e2e,
+      0 0 80px #ff2e2e;
+  }
+
+  /* Click effect */
+  .neon-btn:active {
+    transform: scale(0.95);
+  }
+
+</style>
+
+</head>
+<body>
+
+<button class="neon-btn blue" onclick="window.open('index.html')">POSTERS</button>
+<button class="neon-btn red" onclick="window.open('gallery.html')">PHOTOS</button>
+
+</body>
+</html>
