@@ -1,25 +1,122 @@
-<input type="radio" name="vibe" id="vibe-cyber" checked hidden>
-<input type="radio" name="vibe" id="vibe-ethereal" hidden>
-<input type="radio" name="vibe" id="vibe-inferno" hidden>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cool Buttons</title>
+  <style>
+    body {
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+    }
 
-<main class="art-board">
-	<div class="fluid-mesh">
-		<div class="orb orb-1"></div>
-		<div class="orb orb-2"></div>
-		<div class="orb orb-3"></div>
-	</div>
+    button {
+      padding: 12px 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s;
+    }
 
-	<article class="glass-prism">
-		<div class="prism-content">
-			<div class="badge">CODEPEN</div>
-			<h1 class="gradient-text">Chroma Lab</h1>
-			<p>Interact with the controls below to mathematically shift the OKLCH color space.</p>
+    /* 1. Glow Button */
+    .glow {
+      background: #1e293b;
+      color: white;
+    }
 
-			<div class="controls">
-				<label for="vibe-cyber" class="node" data-label="Cyber"></label>
-				<label for="vibe-ethereal" class="node" data-label="Ethereal"></label>
-				<label for="vibe-inferno" class="node" data-label="Inferno"></label>
-			</div>
-		</div>
-	</article>
-</main>
+    .glow:hover {
+      box-shadow: 0 0 20px #38bdf8, 0 0 40px #38bdf8;
+    }
+
+    /* 2. Slide Fill Button */
+    .slide {
+      background: transparent;
+      color: white;
+      border: 2px solid #38bdf8;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #38bdf8;
+      transition: 0.4s;
+      z-index: 0;
+    }
+
+    .slide:hover::before {
+      left: 0;
+    }
+
+    .slide span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 3. Neon Button */
+    .neon {
+      color: #0ff;
+      background: transparent;
+      border: 2px solid #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .neon:hover {
+      background: #0ff;
+      color: black;
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    /* 4. 3D Button */
+    .threeD {
+      background: #f59e0b;
+      color: white;
+      box-shadow: 0 5px #b45309;
+    }
+
+    .threeD:active {
+      transform: translateY(5px);
+      box-shadow: 0 0 #b45309;
+    }
+
+    /* 5. Border Animation */
+    .border {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .border:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      box-shadow: 0 0 10px #38bdf8;
+    }
+
+  </style>
+</head>
+<body>
+
+  #<button class="glow">Glow Button</button>
+
+  #<button class="slide"><span>Slide Fill</span></button>
+
+  <button class="neon">Posters</button>
+	<button class="neon">Photos</button>
+
+  #<button class="threeD">3D Press</button>
+
+ #<button class="border">Border Effect</button>
+
+</body>
+</html>
